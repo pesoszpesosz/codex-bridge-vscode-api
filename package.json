@@ -1,0 +1,93 @@
+{
+  "name": "codex-bridge",
+  "displayName": "Codex Bridge",
+  "description": "Local VS Code Codex API bridge for automating OpenAI ChatGPT/Codex conversations, jobs, and history-visible threads.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "scripts": {
+    "check": "node --check extension.js",
+    "smoke": "node smoke-test.js",
+    "test": "npm run check && npm run smoke"
+  },
+  "keywords": [
+    "vscode",
+    "codex",
+    "codex-api",
+    "chatgpt",
+    "chatgpt-extension",
+    "vscode-extension",
+    "vscode-api",
+    "automation",
+    "api",
+    "bridge"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:codexBridge.startServer",
+    "onCommand:codexBridge.stopServer",
+    "onCommand:codexBridge.showStatus"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codexBridge.startServer",
+        "title": "Codex Bridge: Start Server"
+      },
+      {
+        "command": "codexBridge.stopServer",
+        "title": "Codex Bridge: Stop Server"
+      },
+      {
+        "command": "codexBridge.showStatus",
+        "title": "Codex Bridge: Show Status"
+      }
+    ],
+    "configuration": {
+      "title": "Codex Bridge",
+      "properties": {
+        "codexBridge.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Start the local Codex Bridge HTTP server when VS Code finishes starting."
+        },
+        "codexBridge.host": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "Host interface for the local Codex Bridge HTTP server."
+        },
+        "codexBridge.port": {
+          "type": "number",
+          "default": 8765,
+          "minimum": 1,
+          "maximum": 65535,
+          "description": "Port for the local Codex Bridge HTTP server."
+        },
+        "codexBridge.authToken": {
+          "type": "string",
+          "default": "",
+          "description": "Optional bearer token required by the bridge HTTP API. Leave empty only for trusted local-only use."
+        },
+        "codexBridge.requestTimeoutMs": {
+          "type": "number",
+          "default": 15000,
+          "minimum": 1000,
+          "description": "Default timeout while waiting for the Codex CLI to acknowledge a new or resumed task."
+        },
+        "codexBridge.tabTimeoutMs": {
+          "type": "number",
+          "default": 15000,
+          "minimum": 1000,
+          "description": "Default timeout while waiting for Codex conversation tabs to appear."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+.smoke-test-assets/
+e2e-proof/
+game-demo/
+*.vsix
+
+.vscode-test/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

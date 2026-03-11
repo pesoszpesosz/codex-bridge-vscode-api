@@ -1,0 +1,4 @@
+.smoke-test-assets/**
+smoke-test.js
+e2e-proof/**
+game-demo/**
