@@ -5,6 +5,14 @@
   "version": "0.0.1",
   "publisher": "local",
   "license": "MIT",
+  "homepage": "https://github.com/pesoszpesosz/codex-bridge-vscode-api#readme",
+  "bugs": {
+    "url": "https://github.com/pesoszpesosz/codex-bridge-vscode-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pesoszpesosz/codex-bridge-vscode-api.git"
+  },
   "scripts": {
     "check": "node --check extension.js",
     "smoke": "node smoke-test.js",

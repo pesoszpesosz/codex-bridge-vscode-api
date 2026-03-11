@@ -1,5 +1,8 @@
 # Codex Bridge
 
+[![CI](https://github.com/pesoszpesosz/codex-bridge-vscode-api/actions/workflows/ci.yml/badge.svg)](https://github.com/pesoszpesosz/codex-bridge-vscode-api/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
 Codex Bridge is a local HTTP API for VS Code Codex automation. It runs as a VS Code extension and exposes the installed OpenAI ChatGPT/Codex extension through a stable, scriptable loopback API that external tools can call.
 
 If you want to start Codex tasks from another app, continue an existing Codex conversation, monitor worker status, and keep those conversations visible in the VS Code Codex history sidebar, this repo is for that.
