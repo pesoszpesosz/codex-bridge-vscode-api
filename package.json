@@ -4,6 +4,7 @@
   "description": "Local VS Code Codex API bridge for automating OpenAI ChatGPT/Codex conversations, jobs, and history-visible threads.",
   "version": "0.0.1",
   "publisher": "local",
+  "icon": "media/codex-bridge.png",
   "license": "MIT",
   "homepage": "https://github.com/pesoszpesosz/codex-bridge-vscode-api#readme",
   "bugs": {

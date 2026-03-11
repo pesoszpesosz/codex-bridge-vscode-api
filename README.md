@@ -3,6 +3,10 @@
 [![CI](https://github.com/pesoszpesosz/codex-bridge-vscode-api/actions/workflows/ci.yml/badge.svg)](https://github.com/pesoszpesosz/codex-bridge-vscode-api/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
+<p align="center">
+  <img src="./media/codex-bridge.svg" alt="Codex Bridge icon" width="160" />
+</p>
+
 Codex Bridge is a local HTTP API for VS Code Codex automation. It runs as a VS Code extension and exposes the installed OpenAI ChatGPT/Codex extension through a stable, scriptable loopback API that external tools can call.
 
 If you want to start Codex tasks from another app, continue an existing Codex conversation, monitor worker status, and keep those conversations visible in the VS Code Codex history sidebar, this repo is for that.
@@ -98,6 +102,31 @@ Reference docs:
 - machine-readable spec: [openapi.json](./openapi.json)
 - endpoint guide: [docs/API.md](./docs/API.md)
 - troubleshooting: [docs/FAQ.md](./docs/FAQ.md)
+
+## OpenClaw and Codex Skill
+
+This repo now includes an installable skill bundle in [skills/codex-bridge-api](./skills/codex-bridge-api). It is meant for OpenClaw, Codex, and other agents that consume the standard `SKILL.md` plus `agents/openai.yaml` format.
+
+The skill gives an agent a direct, repeatable workflow for:
+
+- checking whether the local bridge is running
+- starting a new VS Code Codex task
+- continuing an existing conversation by id
+- polling a job until the worker finishes
+
+Install it with the open skills CLI:
+
+```bash
+npx skills add pesoszpesosz/codex-bridge-vscode-api --skill codex-bridge-api -a openclaw
+```
+
+Install it for Codex with:
+
+```bash
+npx skills add pesoszpesosz/codex-bridge-vscode-api --skill codex-bridge-api -a codex
+```
+
+The bundled helper script is [bridge_client.py](./skills/codex-bridge-api/scripts/bridge_client.py).
 
 ## Quick Start
 

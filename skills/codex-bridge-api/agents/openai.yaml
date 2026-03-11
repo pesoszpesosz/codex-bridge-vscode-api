@@ -1,0 +1,10 @@
+interface:
+  display_name: "Codex Bridge API"
+  short_description: "Run local VS Code Codex tasks"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#61DAFF"
+  default_prompt: "Use $codex-bridge-api to dispatch a task through the local Codex Bridge API and track it to completion."
+
+policy:
+  allow_implicit_invocation: true
